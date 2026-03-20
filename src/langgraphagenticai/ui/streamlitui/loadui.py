@@ -1,5 +1,6 @@
 # src/langgraphagenticai/ui/streamlitui/loadui.py
 import streamlit as st
+from streamlit.errors import StreamlitAPIException 
 from src.langgraphagenticai.ui.uiconfigfile import Config
 import os 
 
@@ -16,8 +17,11 @@ class LoadStreamlitUI:
             st.set_page_config(page_title=f"🤖 {raw_title}", layout="wide")
 
             
-        except st.StreamlitAPIException:
+        except StreamlitAPIException as e:
             pass
+        except Exception as e:
+            # Catch the TypeError or any other unexpected errors
+            st.error(f"Failed to load UI: {str(e)}")
             
         st.header("🤖 " + self.config.get_page_title())
         st.session_state.timeframe = ''
