@@ -9,7 +9,10 @@ def load_langgraph_agenticai_app():
     ui = LoadStreamlitUI()
     user_input = ui.load_streamlit_ui()
 
-    user_message = st.chat_input("Enter the Message")
+    if st.session_state.IsFetchButtonClicked:
+        user_message = st.session_state.timeframe
+    else: 
+        user_message = st.chat_input("Enter the Message")
     
     if user_message:
         # Check for API Key BEFORE trying to build the model
