@@ -23,7 +23,7 @@ class LoadStreamlitUI:
             # Catch the TypeError or any other unexpected errors
             st.error(f"Failed to load UI: {str(e)}")
             
-        st.header("🤖 " + self.config.get_page_title())
+        st.header(" " + self.config.get_page_title())
         st.session_state.timeframe = ''
         st.session_state.IsFetchButtonClicked = False
 
