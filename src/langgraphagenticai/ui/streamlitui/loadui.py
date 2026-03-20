@@ -22,8 +22,9 @@ class LoadStreamlitUI:
         except Exception as e:
             # Catch the TypeError or any other unexpected errors
             st.error(f"Failed to load UI: {str(e)}")
-            
-        st.header(" " + self.config.get_page_title())
+        raw_title = self.config.get_page_title() or "Agentic AI App"
+        st.header(f" {raw_title}")   
+        
         st.session_state.timeframe = ''
         st.session_state.IsFetchButtonClicked = False
 
