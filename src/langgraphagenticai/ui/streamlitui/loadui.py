@@ -10,7 +10,12 @@ class LoadStreamlitUI:
 
     def load_streamlit_ui(self):
         try:
-            st.set_page_config(page_title="🤖 " + self.config.get_page_title(), layout="wide")
+            # Fetch the title, fallback to a default string if it returns None
+            raw_title = self.config.get_page_title() or "Agentic AI App"
+
+            st.set_page_config(page_title=f"🤖 {raw_title}", layout="wide")
+
+            
         except st.StreamlitAPIException:
             pass
             
