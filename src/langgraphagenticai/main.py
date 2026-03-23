@@ -1,4 +1,3 @@
-# src/langgraphagenticai/main.py
 import streamlit as st 
 from src.langgraphagenticai.ui.streamlitui.loadui import LoadStreamlitUI
 from src.langgraphagenticai.LLMs.groqllm import GroqLLM
@@ -9,8 +8,9 @@ def load_langgraph_agenticai_app():
     ui = LoadStreamlitUI()
     user_input = ui.load_streamlit_ui()
 
-    if st.session_state.IsFetchButtonClicked:
-        user_message = st.session_state.timeframe
+    # SAFE CHECK: Use .get() to avoid crashes on first load
+    if st.session_state.get("IsFetchButtonClicked", False):
+        user_message = st.session_state.get("timeframe", "")
     else: 
         user_message = st.chat_input("Enter the Message")
     
