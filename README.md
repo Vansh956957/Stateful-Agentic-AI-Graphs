@@ -22,10 +22,3 @@ The application is divided into three main capabilities:
 ## 💡 The Problem It Solves
 
 Standard AI models often hallucinate or provide outdated information. By integrating Groq for fast switching and Tavily for live web searches, this system only relies on its internal memory when appropriate, and searches the live internet when facts are required. LangSmith is integrated on the backend to track every step the AI takes, ensuring the final output is accurate and useful for the end user.
-
-## ⚙️ Setup & Installation
-
-**1. Clone the repository**
-```bash
-git clone [https://github.com/YourUsername/Your-Repo-Name.git](https://github.com/YourUsername/Your-Repo-Name.git)
-cd Your-Repo-Name
