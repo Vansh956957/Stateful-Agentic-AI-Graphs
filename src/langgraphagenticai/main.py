@@ -33,4 +33,4 @@ def load_langgraph_agenticai_app():
             display_handler.display_result_on_ui()
                 
         except Exception as e:
-            st.error(f"System Error: {e}")
+            st.error(f"System Error: {e}")  
